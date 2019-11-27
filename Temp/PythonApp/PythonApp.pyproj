@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ef8010a2-2816-4ea3-8341-a30f33124c75</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.py</StartupFile>
+    <StartupFile>www\models.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,10 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.py">
+    <Compile Include="PythonApp.py" />
+    <Compile Include="test.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PythonApp.py" />
+    <Compile Include="www\app.py" />
+    <Compile Include="www\models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="www\orm.py">
       <SubType>Code</SubType>
     </Compile>
