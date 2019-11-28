@@ -1,13 +1,33 @@
+'''
+@Author: guojijie
+@Date: 2019-11-28 20:34:40
+@LastEditTime: 2019-11-28 21:55:09
+@LastEditors: Please set LastEditors
+@Description: In User Settings Edit
+@FilePath: \awesome-python3-webapp\www\test.py
+'''
 # test
-import inspect
-def a(a, b=0, *c, d, e=1, **f):
-    pass
-aa = inspect.signature(a)
-print("inspect.signature（fn)是:%s" % aa)
-print("inspect.signature（fn)的类型：%s" % (type(aa)))
-print("\n")
+from Common import rehelper,common
 
-bb = aa.parameters
-print("signature.paramerters属性是:%s" % bb)
-print("ignature.paramerters属性的类型是%s" % type(bb))
-print("\n")
+
+def main():
+    tel = input("请输入手机号")
+    v =  rehelper.verifyPhone(tel)
+
+    if v is True:
+        print("手机格式正确！")
+    else:
+        print("手机格式错误")
+    
+    eml = input("请输入邮箱地址")
+    u =  rehelper.verifyEmails(tel)
+
+    if v is True:
+        print("邮箱地址正确！")
+    else:
+        print("邮箱地址错误")
+
+if __name__ == "__main__":
+    main()
+
+    
