@@ -11,20 +11,20 @@ def log(sql, args=()):
 
 # 全局的连接池 _pool
 async def create_pool(loop, **kw):
-    logging.info('Create a database connection pool...')
-    global _pool
-    _pool = await aiomysql.create_pool(
+    logging.info('create database connection pool...')
+    global __pool
+    __pool = await aiomysql.create_pool(
         host=kw.get('host', 'localhost'),
         port=kw.get('port', 3306),
         user=kw['user'],
         password=kw['password'],
-        db=kw['database'],
+        db=kw['db'],
         charset=kw.get('charset', 'utf8'),
         autocommit=kw.get('autocommit', True),
         maxsize=kw.get('maxsize', 10),
         minsize=kw.get('minsize', 1),
         loop=loop
-        )
+    )
 
 
 class Field(object):

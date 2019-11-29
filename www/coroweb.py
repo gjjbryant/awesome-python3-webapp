@@ -2,13 +2,15 @@
 
 __author__ = 'GJJ'
 
-import asyncio, os, inspect, logging, functools
-
+import asyncio
+import functools
+import inspect
+import logging
+import os
 from urllib import parse
-
 from aiohttp import web
+import apis 
 
-from apis import APIError
 
 #要把一个函数映射为一个URL处理函数
 #这样，一个函数通过@get()的装饰就附带了URL信息。
@@ -178,8 +180,3 @@ def add_routes(app, module_name):
             path = getattr(fn, '__route__', None)
             if method and path:
                 add_route(app, fn)
-
-                
-
-
-

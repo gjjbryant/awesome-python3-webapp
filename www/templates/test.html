@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Test users - Awesome Python Webapp</title>
+</head>
+<body>
+    <h1>All users</h1>
+    {% for u in users%}                  <!-- python在.html文件中的用法； 运行、获取后台代码或值。<%%>之间可以写服务器端代码 -->>
+    <p>{{u.name}} / {{u.email}}</p> <!-- {{}} 绑定数据  -->>
+    {% endfor %}
+</body>
+</html>
